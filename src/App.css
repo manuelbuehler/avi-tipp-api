@@ -12,7 +12,7 @@
 
 body {
   min-height: 100vh;
-  background: url(timothy-tan-PAe2UhGo-S4-unsplash.jpg) center / cover;
+  background: url(uefaeuro2024wt.jpg) center / cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,8 +80,9 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
-  color: #4CAF50;
+  text-decoration:underline;
+  text-decoration-thickness: .75px; 
+  color: #183ada;
 }
 
 thead th {
