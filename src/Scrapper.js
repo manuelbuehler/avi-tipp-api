@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import cheerio from "cheerio";
 
-const Scrapper = () => {
+const Scrapper = ({ communityId }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -13,7 +13,7 @@ const Scrapper = () => {
 
             while (moreData) {
                 try {
-                    const url = `/communities/11236?page=${page}`;
+                    const url = `/communities/${communityId}?page=${page}`;
                     const urlResponse = await axios.get(url);
                     const $ = cheerio.load(urlResponse.data);
 

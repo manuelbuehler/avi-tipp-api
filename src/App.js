@@ -1,18 +1,16 @@
-import React from "react";
-import './App.css';
-import Scrapper from './Scrapper';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import Ranking from './Ranking';
 
-const App = () => {
+function App() {
   return (
-    <main className="table">
-      <section className="table__header">
-        <h1>Euro2024 Tippspiel Ranking</h1>
-      </section>
-      <section className="table__body">
-        <Scrapper />
-      </section>
-    </main>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:communityid" element={<Ranking />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
