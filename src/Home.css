@@ -1,0 +1,87 @@
+.login {
+    position: relative;
+    width: 30vw;
+    max-width: 450px;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.login h1 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.inputBox input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    background-color: transparent;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.inputBox input:focus {
+    border-bottom-color: #183ada;
+}
+
+.inputBox span {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 16px;
+    color: #666;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.inputBox input:focus~span,
+.inputBox input:valid~span {
+    font-size: 12px;
+    transform: translateY(-25px);
+    color: #183ada;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #333;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+    background-color: #183ada;
+}
+
+.helpLink {
+    color: gray;
+    font-size: small;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
+
+.helpLink:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

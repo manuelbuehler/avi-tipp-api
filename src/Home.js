@@ -1,9 +1,16 @@
+import styles from './Home.css'
+
 const Home = () => {
     return (
-        <h1>Home
-            A place where I can go
-            To take this off my shoulders
-            Someone take me home</h1>
+        <main className='login'>
+            <h1>Tippgruppe</h1>
+            <div className="inputBox">
+                <input type='text' id="communityId" required="required" />
+                <span>Tippgruppe-Id</span>
+            </div>
+            <a className='helpLink'>Wo finde ich meine Tippgruppe-Id?</a>
+            <button className="submitButton" type="submit">Nachricht senden</button>
+        </main>
     );
 };
 
