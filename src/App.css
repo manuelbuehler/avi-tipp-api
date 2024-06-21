@@ -7,11 +7,3 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
-
-body {
-  min-height: 100vh;
-  background: url(uefaeuro2024wt.jpg) center / cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
