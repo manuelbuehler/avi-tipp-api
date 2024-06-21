@@ -1,3 +1,10 @@
+# SRF Tippgruppe Id
+1. Auf https://emtippspiel.srf.ch/communities nach Tippgruppe suchen
+2. Tippgruppe öffnen
+3. Id der Tippgruppe aus URL entnehmen
+=> Beispiel: https://emtippspiel.srf.ch/communities/12345
+=> Tipppgruppe Id: 12345
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
