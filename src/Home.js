@@ -1,15 +1,30 @@
 import styles from './Home.css'
+import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
 
 const Home = () => {
+    const [communityId, setCommunityId] = useState(''); 
+    const navigate = useNavigate();
+
+    const handleInputChange = (e) => {
+        setCommunityId(e.target.value); 
+    };
+
+
+    const handleSubmit = () => {
+        if (communityId.trim() !== '') {
+            navigate(`/${communityId}`);
+        }
+    }
     return (
         <main className='login'>
             <h1>Tippgruppe</h1>
             <div className="inputBox">
-                <input type='text' id="communityId" required="required" />
+                <input type='text' id="communityId" value={communityId} onChange={handleInputChange} required="required" />
                 <span>Tippgruppe-Id</span>
             </div>
             <a className='helpLink'>Wo finde ich meine Tippgruppe-Id?</a>
-            <button className="submitButton" type="submit">Nachricht senden</button>
+            <button className="submitButton" onClick={handleSubmit} type="submit">Speichern</button>
         </main>
     );
 };
