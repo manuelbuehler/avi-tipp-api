@@ -6,13 +6,18 @@ const useAutoScroll = () => {
 
     const pageScroll = () => {
         if (containRef.current) {
-            containRef.current.scrollTop += 1;
 
             if (containRef.current.scrollTop + containRef.current.clientHeight >= containRef.current.scrollHeight - 1) {
-                containRef.current.scrollTop = 0;
+
+                setTimeout(() => {
+                    containRef.current.scrollTop = 0;
+                    myTimeRef.current = setTimeout(pageScroll, 1000);
+                }, 500);
+            } else {
+                containRef.current.scrollTop += 1;
+                myTimeRef.current = setTimeout(pageScroll, 75);
             }
         }
-        myTimeRef.current = setTimeout(pageScroll, 25);
     };
 
     const handleMouseOver = () => {
