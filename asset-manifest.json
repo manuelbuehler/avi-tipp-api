@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/avi-tipp-api/static/css/main.39f14e13.css",
-    "main.js": "/avi-tipp-api/static/js/main.be9111a4.js",
+    "main.js": "/avi-tipp-api/static/js/main.60c59c5d.js",
     "static/js/453.e5cc9263.chunk.js": "/avi-tipp-api/static/js/453.e5cc9263.chunk.js",
     "static/media/uefaeuro2024wt.jpg": "/avi-tipp-api/static/media/uefaeuro2024wt.3d81e4e4f1e0ffbd255f.jpg",
     "index.html": "/avi-tipp-api/index.html",
     "main.39f14e13.css.map": "/avi-tipp-api/static/css/main.39f14e13.css.map",
-    "main.be9111a4.js.map": "/avi-tipp-api/static/js/main.be9111a4.js.map",
+    "main.60c59c5d.js.map": "/avi-tipp-api/static/js/main.60c59c5d.js.map",
     "453.e5cc9263.chunk.js.map": "/avi-tipp-api/static/js/453.e5cc9263.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.39f14e13.css",
-    "static/js/main.be9111a4.js"
+    "static/js/main.60c59c5d.js"
   ]
 }
