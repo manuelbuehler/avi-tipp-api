@@ -4,7 +4,7 @@ import Ranking from './Ranking';
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:communityid" element={<Ranking />} />
