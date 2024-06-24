@@ -23,7 +23,7 @@ const Home = () => {
                 <input type='text' id="communityId" value={communityId} onChange={handleInputChange} required="required" />
                 <span>Tippgruppe-Id</span>
             </div>
-            <a className='helpLink'>Wo finde ich meine Tippgruppe-Id?</a>
+            <a href='https://github.com/manuelbuehler/avi-tipp-api' className='helpLink'>Wo finde ich meine Tippgruppe-Id?</a>
             <button className="submitButton" onClick={handleSubmit} type="submit">Speichern</button>
         </main>
     );
