@@ -25,12 +25,12 @@ main.table {
     padding: .8rem 1rem;
 }
 
-.table__body::-webkit-scrollbar {
+#table_scroll::-webkit-scrollbar {
     width: 0.5rem;
     height: 0.5rem;
 }
 
-.table__body::-webkit-scrollbar-thumb {
+#table_scroll::-webkit-scrollbar-thumb {
     border-radius: .5rem;
     background-color: #0004;
     visibility: hidden;
@@ -38,6 +38,17 @@ main.table {
 
 .table__body:hover::-webkit-scrollbar-thumb {
     visibility: visible;
+}
+
+#contain {
+    height: 70vh;
+    overflow-y: auto;
+}
+
+#table_scroll {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 150px;
 }
 
 table {
@@ -52,7 +63,7 @@ table {
     margin: .8rem auto;
     border-radius: .6rem;
 
-    overflow: auto;
+    overflow: hidden;
 }
 
 table,
