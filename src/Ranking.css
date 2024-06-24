@@ -7,8 +7,16 @@ body {
     align-items: center;
 }
 
-main.table {
-    width: 82vw;
+.ranking {
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.table,
+.tips {
     height: 90vh;
     background-color: #fff5;
 
@@ -19,7 +27,18 @@ main.table {
     overflow: hidden;
 }
 
-.table__header {
+.table {
+    flex: 3;
+}
+
+.tips {
+    flex: 1;
+}
+
+
+
+.table__header,
+.tips__header {
     width: 100%;
     background-color: #fff4;
     padding: .8rem 1rem;
@@ -88,6 +107,12 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
     background-color: #fff6ff;
 
+}
+
+.table__body {
+    width: 100%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
 }
 
 @media (max-width: 1000px) {
