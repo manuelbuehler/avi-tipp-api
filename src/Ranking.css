@@ -19,6 +19,26 @@ main.table {
     overflow: hidden;
 }
 
+
+
+
+/* table:nth-child(1)
+{
+    background-color: red;
+}
+
+table:nth-child(2)
+{
+
+
+}
+
+table:nth-child(3)
+{
+
+} */
+
+
 .table__header {
     width: 100%;
     background-color: #fff4;
@@ -94,6 +114,7 @@ tbody tr:nth-child(even) {
     background-color: #0000000b;
 }
 
+
 tbody tr:hover {
     background-color: #fff6ff;
 
@@ -103,4 +124,24 @@ tbody tr:hover {
     td:not(:first-of-type) {
         min-width: 12.1rem;
     }
+}
+
+tbody tr:nth-child(1) {
+    background-color: rgba(255, 198, 10, 0.8); /* #ffc60a, transparenter */
+}
+
+tbody tr:nth-child(2) {
+    background-color: rgba(170, 169, 174, 0.8); /* #aaa9ae, transparenter */
+}
+
+tbody tr:nth-child(3) {
+    background-color: rgba(205, 127, 50, 0.8); /* #cd7f32, transparenter */
+}
+
+tbody tr:nth-last-of-type(2) {
+    background-color: rgba(255, 129, 91, 0.8); /* #ff815b, transparenter */
+}
+
+tbody tr:last-of-type {
+    background-color: rgba(255, 93, 52, 0.8); /* #ff5d34, transparenter */
 }
