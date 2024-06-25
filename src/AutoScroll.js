@@ -11,8 +11,8 @@ const useAutoScroll = () => {
 
                 setTimeout(() => {
                     containRef.current.scrollTop = 0;
-                    myTimeRef.current = setTimeout(pageScroll, 1000);
-                }, 500);
+                    myTimeRef.current = setTimeout(pageScroll, 3000);
+                }, 3000);
             } else {
                 containRef.current.scrollTop += 1;
                 myTimeRef.current = setTimeout(pageScroll, 75);
