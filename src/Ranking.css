@@ -7,39 +7,28 @@ body {
     align-items: center;
 }
 
-main.table {
-    width: 82vw;
+main {
+    display: flex;
+    width: 90vw;
     height: 90vh;
     background-color: #fff5;
-
-    backdrop-filter: blur(7px);
     box-shadow: 0 .4rem .8rem #0005;
     border-radius: .8rem;
-
+    backdrop-filter: blur(7px);
     overflow: hidden;
-}
-
-
-
-
-/* table:nth-child(1)
-{
-    background-color: red;
-}
-
-table:nth-child(2)
-{
-
 
 }
 
-table:nth-child(3)
-{
+.table {
+    width: 75%
+}
 
-} */
+.tips {
+    width: 25%;
+}
 
-
-.table__header {
+.table__header ,
+.tips__header {
     width: 100%;
     background-color: #fff4;
     padding: .8rem 1rem;

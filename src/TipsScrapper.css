@@ -1,0 +1,64 @@
+/* Stil für die gesamte Komponente */
+.gameData {
+    font-family: Arial, sans-serif;
+    max-width: 600px; 
+    height: 80vh;
+    padding-right: 20px;
+    margin: .8rem auto;
+    overflow-y: scroll;
+}
+
+/* Stil für jedes Spiel */
+.gameData > div {
+    margin-bottom: 25px;
+    background-color: #f0f0f0; 
+    padding: 4%;
+    border-radius: 8px;
+}
+
+/* Stil für das Datum */
+.gameData p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Stil für den Ort */
+.gameData p + p {
+    margin-top: 8px;
+    color: #666;
+}
+
+/* Stil für die Liste der Teams */
+.gameData ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Stil für jedes Team */
+.gameData li {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #444;
+}
+
+/* Stil für das Team-Logo */
+.gameData li img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover; /* Skaliert das Bild, ohne das Seitenverhältnis zu ändern */
+}
+
+/* Stil für den Team-Namen */
+.gameData li span {
+    font-weight: bold;
+}
+
+.result {
+    margin-left: auto;
+    font-weight: bold;
+}
