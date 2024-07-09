@@ -1,6 +1,6 @@
 import Scrapper from './Scrapper';
 import { useParams } from 'react-router-dom';
-import styles from './Ranking.css'
+import './Ranking.css'
 import TipsScrapper from './TipsScrapper';
 
 const Ranking = () => {
@@ -19,7 +19,7 @@ const Ranking = () => {
             </section>
             <section className='tips'>
                 <section className="tips__header">
-                    <h1>Aktuelle Tipps</h1>
+                    <h1>Aktuelle Runde</h1>
                 </section>
                 <section className='tips__body'>
                     <TipsScrapper userId={userId}/>

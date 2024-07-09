@@ -12,7 +12,7 @@ const TipsScrapper = ({ userId }) => {
     useEffect(() => {
         const fetchAllData = async () => {
             try {
-                const url = `/users/${userId}/round/5`;
+                const url = `/users/${userId}`;
                 const urlResponse = await axios.get(url);
                 // console.log("Reponse:")
                 // console.log(urlResponse);
