@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import cheerio from 'cheerio';
+import { load } from "cheerio";
 import './TipsScrapper.css'; // Importiere deine CSS-Datei für die Stile
 import useAutoScroll from "./AutoScroll.js";
 
@@ -12,13 +12,13 @@ const TipsScrapper = ({ userId }) => {
     useEffect(() => {
         const fetchAllData = async () => {
             try {
-                const url = `/users/${userId}`;
+                const url = `/api-srf/users/${userId}`;
                 const urlResponse = await axios.get(url);
                 // console.log("Reponse:")
                 // console.log(urlResponse);
                 // console.log("Data:")
                 // console.log(urlResponse.data)
-                const $ = cheerio.load(urlResponse.data);
+                const $ = load(urlResponse.data);
 
                 // const roundsData = $('div[data-react-class="SelectRaceweek/index"]').attr('data-react-props');
                 // setCurrentRound(currentRound ? currentRound.round : null);

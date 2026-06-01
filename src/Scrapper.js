@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import cheerio from "cheerio";
+import { load } from "cheerio";
 import useAutoScroll from "./AutoScroll.js";
 
 const Scrapper = ({ communityId }) => {
@@ -14,10 +14,10 @@ const Scrapper = ({ communityId }) => {
       var moreData = true;
 
       while (moreData) {
-        try {
-          const url = `/communities/${communityId}?page=${page}`;
+        try {       
+          const url = `/api-srf/communities/${communityId}?page=${page}`;
           const urlResponse = await axios.get(url);
-          const $ = cheerio.load(urlResponse.data);
+          const $ = load(urlResponse.data);
 
           const links = [];
           $(".rankingList__item").each((i, element) => {
@@ -65,7 +65,7 @@ const Scrapper = ({ communityId }) => {
               <tr key={index}>
                 <td>{item.rank}</td>
                 <td>
-                  <a href={`https://emtippspiel.srf.ch${item.profileLink}`} target="_blank" rel="noopener noreferrer">{item.name}</a>
+                  <a href={`https://wmtippspiel.srf.ch${item.profileLink}`} target="_blank" rel="noopener noreferrer">{item.name}</a>
                 </td>
                 <td>{item.points}</td>
               </tr>

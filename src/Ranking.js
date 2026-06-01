@@ -5,13 +5,13 @@ import TipsScrapper from './TipsScrapper';
 
 const Ranking = () => {
     const { communityid } = useParams();
-    const userId = "Y080r";
+    const userId = "zD2gr";
 
     return (
         <main>
             <section className='table'>
                 <section className="table__header">
-                    <h1>Euro2024 Tippspiel Ranking</h1>
+                    <h1>WM 2026 Tippspiel Ranking</h1>
                 </section>
                 <section className="table__body">
                     <Scrapper communityId={communityid} />

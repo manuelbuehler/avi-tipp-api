@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import React, { useState } from 'react';
 
 const Home = () => {
-    const [communityId, setCommunityId] = useState(''); 
+    const [communityId, setCommunityId] = useState('24153'); 
     const navigate = useNavigate();
 
     const handleInputChange = (e) => {

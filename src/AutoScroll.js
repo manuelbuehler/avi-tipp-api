@@ -10,8 +10,10 @@ const useAutoScroll = () => {
             if (containRef.current.scrollTop + containRef.current.clientHeight >= containRef.current.scrollHeight - 1) {
 
                 setTimeout(() => {
-                    containRef.current.scrollTop = 0;
-                    myTimeRef.current = setTimeout(pageScroll, 3000);
+                    if (containRef.current) {
+                        containRef.current.scrollTop = 0;
+                        myTimeRef.current = setTimeout(pageScroll, 3000);
+                    }
                 }, 3000);
             } else {
                 containRef.current.scrollTop += 1;
