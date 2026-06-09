@@ -122,13 +122,13 @@ const TipsScrapper = ({ userId }) => {
                   {match.date.toLocaleDateString("de-CH", {
                     day: "2-digit",
                     month: "2-digit",
-                    timeZone: "Europe/Zurich",
+                    timeZone: "cet",
                   })}{" "}
                   - {""}
                   {match.date.toLocaleTimeString("de-CH", {
                     hour: "2-digit",
                     minute: "2-digit",
-                    timeZone: "Europe/Zurich",
+                    timeZone: "cet",
                   })}{" "}
                   Uhr
                 </span>
