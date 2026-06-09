@@ -108,7 +108,6 @@ const TipsScrapper = ({ userId }) => {
 
   return (
     <div className="round-results-container">
-
       {matches.length === 0 ? (
         <p className="no-matches-text">Keine Spiele im Zeitraum angesetzt.</p>
       ) : (
@@ -123,11 +122,13 @@ const TipsScrapper = ({ userId }) => {
                   {match.date.toLocaleDateString("de-CH", {
                     day: "2-digit",
                     month: "2-digit",
+                    timeZone: "Europe/Zurich",
                   })}{" "}
                   - {""}
                   {match.date.toLocaleTimeString("de-CH", {
                     hour: "2-digit",
                     minute: "2-digit",
+                    timeZone: "Europe/Zurich",
                   })}{" "}
                   Uhr
                 </span>
