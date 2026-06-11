@@ -19,17 +19,26 @@ const TipsScrapper = ({ userId }) => {
           return `${y}${m}${d}`;
         };
 
-        const today = new Date();
+        const today = new Date(); 
+        const yesterday = new Date();
+        yesterday.setDate(today.getDate() - 1);
+
+        let dateRangeStr = "";
 
         if (today < new Date("2026-06-11")) {
-          var todayStr = "20260611";
+          dateRangeStr = "20260611";
+        } else if (today > new Date("2026-07-19")) {
+          dateRangeStr = "20260719";
         } else {
-          var todayStr = formatDate(today);
+          const yesterdayStr = formatDate(yesterday);
+          const todayStr = formatDate(today);
+          dateRangeStr = `${yesterdayStr}-${todayStr}`;
         }
 
-        // 2. ESPN API-Aufruf (CORS-frei, direkt im Frontend aufrufbar)
+        console.log(`ESPN API Abfrage für Zeitraum: ${dateRangeStr}`);
+
         const response = await fetch(
-          `https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=${todayStr}`,
+          `https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=${dateRangeStr}`,
         );
 
         if (!response.ok) {
