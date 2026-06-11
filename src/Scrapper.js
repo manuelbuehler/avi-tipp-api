@@ -12,6 +12,7 @@ const Scrapper = ({ communityId }) => {
       var allLinks = [];
       var page = 1;
       var moreData = true;
+      var hasError = false;
 
       while (moreData) {
         try {       
@@ -37,13 +38,23 @@ const Scrapper = ({ communityId }) => {
         } catch (error) {
           console.error("Error fetching data: ", error);
           moreData = false;
+          hasError = true;
         }
       }
 
-      setData(allLinks);
+      if (!hasError && allLinks.length > 0) {
+        setData(allLinks);
+      }
     };
 
     fetchAllData();
+
+    const intervalId = setInterval(() => {
+      console.log("Fetch Ranking Data...");
+      fetchAllData();
+    }, 900000);
+
+    return () => clearInterval(intervalId);
   }, [communityId]);
 
 
