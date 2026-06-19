@@ -54,35 +54,28 @@ const TipsScrapper = ({ userId }) => {
             const competition = event.competitions[0];
             const competitors = competition.competitors || [];
 
-            // ESPN unterscheidet strikt zwischen Home und Away via 'homeAway' Eigenschaft
             const homeTeam = competitors.find((c) => c.homeAway === "home");
             const awayTeam = competitors.find((c) => c.homeAway === "away");
 
             return {
               id: event.id,
               date: new Date(event.date),
-              statusName: event.status.type.name, // STATUS_SCHEDULED, STATUS_IN_PROGRESS, STATUS_FINAL
-              statusText: event.status.type.shortDetail, // z.B. "FT", "45'", "21:00"
+              statusState: event.status.type.state, 
+              statusText: event.status.type.shortDetail,
               venue: competition.venue?.fullName || "WM Stadion",
               home: {
-                name:
-                  homeTeam?.team?.displayName ||
-                  homeTeam?.team?.name ||
-                  "Heimteam",
+                name: homeTeam?.team?.displayName || homeTeam?.team?.name || "Heimteam",
                 logo: homeTeam?.team?.logo || "",
                 score: homeTeam?.score,
               },
               away: {
-                name:
-                  awayTeam?.team?.displayName ||
-                  awayTeam?.team?.name ||
-                  "Auswärtsteam",
+                name: awayTeam?.team?.displayName || awayTeam?.team?.name || "Auswärtsteam",
                 logo: awayTeam?.team?.logo || "",
                 score: awayTeam?.score,
               },
             };
           })
-          .sort((a, b) => a.date - b.date); // Chronologisch sortieren
+          .sort((a, b) => a.date - b.date);
 
         setMatches(formattedMatches);
         setLoading(false);
@@ -93,18 +86,16 @@ const TipsScrapper = ({ userId }) => {
       }
     };
 
-    // Erstes Laden und automatisches Update-Intervall alle 60 Sekunden für Live-Stände
     fetchESPNResults();
     const interval = setInterval(fetchESPNResults, 60000);
     return () => clearInterval(interval);
   }, []);
 
-  // Hilfsfunktion zur Formatierung des Spielstatus (Live, Beendet, Bevorstehend)
   const renderStatus = (match) => {
-    if (match.statusName === "STATUS_IN_PROGRESS") {
+    if (match.statusState === "in") {
       return <span className="status-live">● LIVE ({match.statusText})</span>;
     }
-    if (match.statusName === "STATUS_FINAL") {
+    if (match.statusState === "post") {
       return <span className="status-ft">Beendet</span>;
     }
     return <span className="status-ns">Noch nicht begonnen</span>;
@@ -120,10 +111,7 @@ const TipsScrapper = ({ userId }) => {
       {matches.length === 0 ? (
         <p className="no-matches-text">Keine Spiele im Zeitraum angesetzt.</p>
       ) : (
-        <div
-          className="matches-list"
-          style={{ maxHeight: "72vh", overflowY: "auto" }}
-        >
+        <div className="matches-list" style={{ maxHeight: "72vh", overflowY: "auto" }}>
           {matches.map((match) => (
             <div key={match.id} className="match-item-card">
               <div className="match-meta">
@@ -131,13 +119,13 @@ const TipsScrapper = ({ userId }) => {
                   {match.date.toLocaleDateString("de-CH", {
                     day: "2-digit",
                     month: "2-digit",
-                    timeZone: "cet",
+                    timeZone: "cet", 
                   })}{" "}
                   - {""}
                   {match.date.toLocaleTimeString("de-CH", {
                     hour: "2-digit",
                     minute: "2-digit",
-                    timeZone: "cet",
+                    timeZone: "cet", 
                   })}{" "}
                   Uhr
                 </span>
@@ -156,15 +144,11 @@ const TipsScrapper = ({ userId }) => {
                 {/* Score */}
                 <div className="score-box">
                   <span className="score-num">
-                    {match.statusName !== "STATUS_SCHEDULED"
-                      ? match.home.score
-                      : "-"}
+                    {match.statusState !== "pre" ? match.home.score : "-"}
                   </span>
                   <span className="score-divider">:</span>
                   <span className="score-num">
-                    {match.statusName !== "STATUS_SCHEDULED"
-                      ? match.away.score
-                      : "-"}
+                    {match.statusState !== "pre" ? match.away.score : "-"}
                   </span>
                 </div>
 
